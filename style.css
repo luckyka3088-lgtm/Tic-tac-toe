@@ -99,8 +99,8 @@ main{
   width:90vw;
   height:90vw;
 
-  max-width:450px;
-  max-height:450px;
+  max-width:400px;
+  max-height:400px;
 
   position:relative;
 
@@ -300,20 +300,6 @@ h6{
   font-size:18px;
 }
 
-#winLine{
-  position:absolute;
-
-  width:400px;
-  height:8px;
-
-  background:white;
-
-  box-shadow:
-    0 0 10px white,
-    0 0 20px white;
-
-  display:none;
-}
 
 @keyframes pop{
   0%{
