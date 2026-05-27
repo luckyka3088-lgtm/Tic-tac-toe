@@ -12,6 +12,7 @@ body{
 
   overflow-x:hidden;
   min-height:100vh;
+  box-sizing: border-box;
 }
 
 header{
@@ -28,13 +29,13 @@ main{
   flex-direction:column;
   align-items:center;
 
-  gap:30px;
-
-  margin-top:120px;
+  /* Uses dynamic scaling so content shrinks on shorter tablet/mobile screens */
+  gap: clamp(15px, 3.5vh, 30px);
+  margin-top: clamp(30px, 6vh, 100px);
 }
 
 #title{
-  font-size:60px;
+  font-size: clamp(36px, 6vw, 60px);
   text-align:center;
 
   background:linear-gradient(90deg,#4DA3FF,#FF5CA8);
@@ -52,383 +53,215 @@ main{
   color:white;
   font-family:Montserrat,sans-serif;
   text-align:center;
-  margin-top:-20px;
+  margin-top:-15px;
+  font-size: clamp(14px, 2vw, 18px);
 }
 
 #typeground{
   background:rgba(255,255,255,0.09);
 
   width:90%;
-  max-width:500px;
-
-  height:100px;
+  max-width:450px;
+  height:85px;
 
   border-radius:20px;
 
   display:flex;
   justify-content:center;
   align-items:center;
-
-  gap:20px;
+  gap: 20px; 
 }
 
 .type{
   background:linear-gradient(90deg,#1752e8,#7bb0ed);
-
   border-radius:20px;
 
-  width:40%;
+  width:42%;
   max-width:180px;
+  height:50px;
 
-  height:60px;
-
-  font-size:clamp(16px,3vw,30px);
+  /* Keeps font size balanced inside the button container */
+  font-size: clamp(14px, 2vw, 20px); 
 
   font-family:Montserrat,sans-serif;
-
   border:none;
-
   color:white;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 #board{
   background-color:black;
-
   border-radius:20px;
 
-  width:90vw;
-  height:90vw;
-
-  max-width:400px;
-  max-height:400px;
+  /* Board scales smoothly using viewport units */
+  width: 75vmin;
+  height: 75vmin;
+  max-width: 380px;
+  max-height: 380px;
 
   position:relative;
-
   border:3px solid rgba(255,255,255,0.4);
 }
 
 .button{
   background:rgba(255,255,255,0.09);
-
   width:30%;
   height:30%;
 
   border:0;
   border-radius:8px;
-
-  font-size:clamp(50px,10vw,100px);
-
+  font-size:clamp(40px, 8vmin, 90px);
   font-weight:bold;
-
   font-family:Montserrat,sans-serif;
 }
 
-#cell0{
-  position:absolute;
-  left:2%;
-  top:2%;
-}
-
-#cell1{
-  position:absolute;
-  left:35%;
-  top:2%;
-}
-
-#cell2{
-  position:absolute;
-  right:2%;
-  top:2%;
-}
-
-#cell3{
-  position:absolute;
-  left:2%;
-  top:35%;
-}
-
-#cell4{
-  position:absolute;
-  left:35%;
-  top:35%;
-}
-
-#cell5{
-  position:absolute;
-  right:2%;
-  top:35%;
-}
-
-#cell6{
-  position:absolute;
-  left:2%;
-  top:68%;
-}
-
-#cell7{
-  position:absolute;
-  left:35%;
-  top:68%;
-}
-
-#cell8{
-  position:absolute;
-  right:2%;
-  top:68%;
-}
+/* Board Cells Position Rules */
+#cell0{ position:absolute; left:2%; top:2%; }
+#cell1{ position:absolute; left:35%; top:2%; }
+#cell2{ position:absolute; right:2%; top:2%; }
+#cell3{ position:absolute; left:2%; top:35%; }
+#cell4{ position:absolute; left:35%; top:35%; }
+#cell5{ position:absolute; right:2%; top:35%; }
+#cell6{ position:absolute; left:2%; top:68%; }
+#cell7{ position:absolute; left:35%; top:68%; }
+#cell8{ position:absolute; right:2%; top:68%; }
 
 .O{
   color:#FF5CA8;
-
-  text-shadow:
-    0 0 5px #FF5CA8,
-    0 0 10px #FF5CA8,
-    0 0 15px #FF5CA8,
-    0 0 20px #FF5CA8;
+  text-shadow: 0 0 5px #FF5CA8, 0 0 10px #FF5CA8, 0 0 15px #FF5CA8, 0 0 20px #FF5CA8;
 }
 
 .X{
   color:#4DA3FF;
-
-  text-shadow:
-    0 0 5px #4DA3FF,
-    0 0 10px #4DA3FF,
-    0 0 15px #4DA3FF,
-    0 0 20px #4DA3FF;
+  text-shadow: 0 0 5px #4DA3FF, 0 0 10px #4DA3FF, 0 0 15px #4DA3FF, 0 0 20px #4DA3FF;
 }
 
 #scoreBox{
   background:rgba(255,255,255,.09);
-
   width:90%;
-  max-width:500px;
-
-  height:150px;
-
+  max-width:450px;
+  height:110px;
   border-radius:20px;
-
   position:relative;
 }
 
 hr{
   color:white;
-
   width:1px;
-  height:110px;
-
+  height:80px;
   position:absolute;
-
   left:50%;
-  top:10px;
+  top:15px;
 }
 
-#X,
-#O{
-  font-size:70px;
+#X, #O{
+  font-size: 40px;
   position:absolute;
+  top: -15px;
 }
 
-#X{
-  right:90px;
-  top:-90px;
+#X{ right:20%; color:#4DA3FF; }
+#O{ left:20%; color:#FF5CA8; }
 
-  color:#4DA3FF;
-}
-
-#O{
-  left:90px;
-  top:-90px;
-
-  color:#FF5CA8;
-}
-
-#Xscore,
-#Oscore{
-  font-size:70px;
+#Xscore, #Oscore{
+  font-size: 40px;
   position:absolute;
-  top:-5px;
+  top: 35px;
 }
 
 #Xscore{
-  right:90px;
-
+  right:20%;
   color:#4DA3FF;
-
-  text-shadow:
-    0 0 5px #4DA3FF,
-    0 0 10px #4DA3FF,
-    0 0 15px #4DA3FF,
-    0 0 20px #4DA3FF;
+  text-shadow: 0 0 5px #4DA3FF, 0 0 10px #4DA3FF, 0 0 15px #4DA3FF;
 }
 
 #Oscore{
-  left:90px;
-
+  left:20%;
   color:#FF5CA8;
-
-  text-shadow:
-    0 0 5px #FF5CA8,
-    0 0 10px #FF5CA8,
-    0 0 15px #FF5CA8,
-    0 0 20px #FF5CA8;
+  text-shadow: 0 0 5px #FF5CA8, 0 0 10px #FF5CA8, 0 0 15px #FF5CA8;
 }
 
 #reset{
   background:rgba(255,255,255,.09);
-
   border-radius:20px;
-
-  width:180px;
-  height:60px;
-
-  font-size:30px;
-
+  width:150px;
+  height:48px;
+  font-size:22px;
   border:0;
-
   color:white;
+  cursor: pointer;
 }
 
 footer{
   text-align:center;
-  margin-top:20px;
-  margin-bottom:20px;
+  margin-top: auto; /* Keeps footer pinned to bottom naturally */
+  padding: 15px 0;
 }
 
-h5,
-h6{
+h5, h6{
   color:rgba(255,255,255,0.7);
-  font-size:18px;
+  font-size:14px;
+  margin: 4px 0;
 }
 
+/* Animations */
+@keyframes pop{ 0%{ transform:scale(0); } 100%{ transform:scale(1); } }
+.O,.X,#Xscore,#Oscore{ animation:pop 0.2s ease; }
+.back{ animation:back 1s ease; }
+@keyframes back{ 0%{ transform:scale(1); } 100%{ transform:scale(0); } }
 
-@keyframes pop{
-  0%{
-    transform:scale(0);
+
+/* Tablet UI Optimization */
+@media screen and (max-width: 1024px) {
+  main {
+    margin-top: 40px;
+    gap: 20px;
   }
-
-  100%{
-    transform:scale(1);
-  }
-}
-
-.O,.X,#Xscore,#Oscore{
-  animation:pop 0.2s ease;
-}
-
-.back{
-  animation:back 1s ease;
-}
-
-@keyframes back{
-  0%{
-    transform:scale(1);
-  }
-
-  100%{
-    transform:scale(0);
+  #board {
+    width: 65vmin;
+    height: 65vmin;
   }
 }
 
-@media screen and (max-width:600px){
-
+/* Small Mobile UI Optimization */
+@media screen and (max-width:480px){
   body{
     overflow:hidden;
   }
-
   main{
-    margin-top:40px;
-    gap:18px;
+    margin-top: 20px;
+    gap: 12px;
   }
-
-  #title{
-    font-size:42px;
-  }
-
-  #below{
-    font-size:15px;
-    margin-top:-10px;
-  }
-
   #typeground{
-    height:75px;
+    height:65px;
     gap:12px;
-    padding:0 10px;
-    box-sizing:border-box;
   }
-
   .type{
-    width:48%;
-    height:45px;
-
-    font-size:14px;
-
-    padding:0 5px;
-
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
+    font-size:14px; 
+    height: 42px;
   }
-
   #board{
-    width:82vw;
-    height:82vw;
+    width:78vw;
+    height:78vw;
   }
-
-  .button{
-    font-size:clamp(40px,9vw,80px);
-  }
-
   #scoreBox{
-    height:95px;
+    height:90px;
   }
-
   hr{
-    height:70px;
-    top:10px;
+    height:65px;
   }
-
-  #X,
-  #O{
-    font-size:32px;
-    top:-28px;
-  }
-
-  #X{
-    right:55px;
-  }
-
-  #O{
-    left:55px;
-  }
-
-  #Xscore,
-  #Oscore{
-    font-size:34px;
-    top:-2px;
-  }
-
-  #Xscore{
-    right:55px;
-  }
-
-  #Oscore{
-    left:55px;
-  }
-
+  #X, #O { font-size: 32px; top: -12px; }
+  #Xscore, #Oscore { font-size: 32px; top: 28px; }
   #reset{
-    width:140px;
-    height:45px;
-    font-size:20px;
+    width:130px;
+    height:42px;
+    font-size:18px;
   }
-
-  footer{
-    margin-top:10px;
-    margin-bottom:5px;
+  footer {
+    padding: 5px 0;
   }
-
-  h5,
-  h6{
+  h5, h6{
     font-size:12px;
-    margin:3px;
   }
 }
