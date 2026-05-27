@@ -331,65 +331,104 @@ h6{
 
 @media screen and (max-width:600px){
 
+  body{
+    overflow:hidden;
+  }
+
+  main{
+    margin-top:40px;
+    gap:18px;
+  }
+
   #title{
     font-size:42px;
   }
 
   #below{
-    font-size:16px;
+    font-size:15px;
+    margin-top:-10px;
   }
 
   #typeground{
-    height:80px;
-    gap:10px;
+    height:75px;
+    gap:12px;
+    padding:0 10px;
+    box-sizing:border-box;
   }
 
   .type{
-    width:45%;
+    width:48%;
     height:45px;
-    font-size:15px;
+
+    font-size:14px;
+
+    padding:0 5px;
+
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+
+  #board{
+    width:82vw;
+    height:82vw;
+  }
+
+  .button{
+    font-size:clamp(40px,9vw,80px);
   }
 
   #scoreBox{
-    height:120px;
+    height:95px;
+  }
+
+  hr{
+    height:70px;
+    top:10px;
   }
 
   #X,
   #O{
-    font-size:40px;
-    top:-45px;
+    font-size:32px;
+    top:-28px;
   }
 
   #X{
-    right:60px;
+    right:55px;
   }
 
   #O{
-    left:60px;
+    left:55px;
   }
 
   #Xscore,
   #Oscore{
-    font-size:40px;
-    top:5px;
+    font-size:34px;
+    top:-2px;
   }
 
   #Xscore{
-    right:65px;
+    right:55px;
   }
 
   #Oscore{
-    left:65px;
+    left:55px;
   }
 
   #reset{
-    width:150px;
-    height:50px;
-    font-size:22px;
+    width:140px;
+    height:45px;
+    font-size:20px;
+  }
+
+  footer{
+    margin-top:10px;
+    margin-bottom:5px;
   }
 
   h5,
   h6{
-    font-size:14px;
+    font-size:12px;
+    margin:3px;
   }
-  }
+}
