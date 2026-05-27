@@ -34,7 +34,7 @@ body{
   border-radius: 20px;
   left:50%;
   transform: translateX(-50%);
-  margin-top:80px;
+  margin-top:-80px;
 }
 .type{
   background: linear-gradient(90deg,#1752e8,#7bb0ed);
@@ -80,7 +80,7 @@ body{
   left:50%;
   transform: translate(-50%,580px);
   border-radius: 20px;
-  margin-top:20px;
+  margin-top:-30px;
 }
 hr{
   color:white;
