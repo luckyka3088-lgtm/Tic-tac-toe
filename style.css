@@ -23,7 +23,7 @@ body{
   color : white;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  transform: translateY(-180%); 
+  transform: translateY(-183%); 
 }
 #typeground{
   background: rgba(255, 255, 255, 0.09);
@@ -34,7 +34,7 @@ body{
   border-radius: 20px;
   left:50%;
   transform: translateX(-50%);
-  margin-top:-75px;
+  margin-top:-70px;
 }
 .type{
   background: linear-gradient(90deg,#1752e8,#7bb0ed);
@@ -69,7 +69,7 @@ body{
   left:50%;
   transform: translate(-50%,110px);
   border:3px solid rgba(255,255,255,0.4);
-  margin-top:10px;
+  margin-top:-40px;
 }
 #scoreBox{
   background: rgba(255, 255, 255,.09);
@@ -127,20 +127,6 @@ h6{
   font-size: clamp(50px,10vw,100px);
   font-weight: bold;
   font-family: Montserrat,sans-serif;
-}
-.O{
-  color:#FF5CA8;
-  text-shadow: 0 0 5px #FF5CA8,
-               0 0 10px #FF5CA8,
-               0 0 15px #FF5CA8,
-               0 0 20px #FF5CA8;
-}
-.X{
-  color:#4DA3FF;
-  text-shadow: 0 0 5px #4DA3FF,
-               0 0 10px#4DA3FF,
-               0 0 15px #4DA3FF;
-               0 0 20px #4DA3FF;
 }
 @keyframes pop{
   0%{
@@ -210,7 +196,7 @@ h6{
                0 0 15px #4DA3FF,
                0 0 20px #4DA3FF;
 }
-#o{
+#O{
   color:#4DA3FF;
   text-shadow: 0 0 5px #4DA3FF,
                0 0 10px#4DA3FF,
