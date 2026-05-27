@@ -23,18 +23,18 @@ body{
   color : white;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  transform: translateY(-183%); 
+  transform: translateY(-190%); 
 }
 #typeground{
   background: rgba(255, 255, 255, 0.09);
-  height: 100px;
+  height: 90px;
   width:90%;
   max-width:500px;
   position:absolute;
   border-radius: 20px;
   left:50%;
   transform: translateX(-50%);
-  margin-top:-70px;
+  margin-top:-50px;
 }
 .type{
   background: linear-gradient(90deg,#1752e8,#7bb0ed);
@@ -69,7 +69,7 @@ body{
   left:50%;
   transform: translate(-50%,110px);
   border:3px solid rgba(255,255,255,0.4);
-  margin-top:-40px;
+  margin-top:-80px;
 }
 #scoreBox{
   background: rgba(255, 255, 255,.09);
@@ -80,7 +80,7 @@ body{
   left:50%;
   transform: translate(-50%,580px);
   border-radius: 20px;
-  margin-top:-30px;
+  margin-top:-100px;
 }
 hr{
   color:white;
@@ -101,7 +101,7 @@ hr{
   transform: translate(-50%,750px);
   border:0;
   color:white;
-  margin-top:-20px;
+  margin-top:-50px;
 }
 h5{
   color : rgba(255,255,255,0.7);
@@ -109,6 +109,7 @@ h5{
   left:50%;
   transform: translate(-50%,790px);
   font-size:20px;
+  
 }
 h6{
   color : rgba(255,255,255,0.7);
