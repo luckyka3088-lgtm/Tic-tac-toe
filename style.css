@@ -221,7 +221,7 @@ color : #4DA3FF;
 #Xscore{
   font-size:70px;
   position: absolute;
-  top:25px;
+  top:50px;
   right:100px;
   color:#4DA3FF;
   text-shadow: 0 0 5px #4DA3FF,
@@ -232,7 +232,7 @@ color : #4DA3FF;
 #Oscore{
   font-size:70px;
   position: absolute;
-  top:25px;
+  top:50px;
   left:102px;
   color:#FF5CA8;
   text-shadow: 0 0 5px #FF5CA8,
