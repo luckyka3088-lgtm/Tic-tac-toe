@@ -7,6 +7,92 @@ body{
   background-color: #070B1A;
   
 }
+
+@media screen and (max-width:600px){
+
+  #typeground{
+    width: 90%;
+    max-width: 350px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #com,
+  #human{
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 130px;
+    height: 45px;
+
+    font-size: 15px;
+    padding: 0 5px;
+  }
+
+  #scoreBox{
+    width: 90%;
+    max-width: 350px;
+    height: 120px;
+
+    transform: translate(-50%,520px);
+  }
+
+  #X,
+  #O{
+    font-size: 40px;
+    top: -45px;
+  }
+
+  #X{
+    right: 60px;
+  }
+
+  #O{
+    left: 60px;
+  }
+
+  #Xscore,
+  #Oscore{
+    font-size: 40px;
+    top: 5px;
+  }
+
+  #Xscore{
+    right: 65px;
+  }
+
+  #Oscore{
+    left: 65px;
+  }
+
+  #reset{
+    transform: translate(-50%,650px);
+  }
+
+  h5{
+    transform: translate(-50%,690px);
+  }
+
+  h6{
+    transform: translate(-50%,720px);
+
+    width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+
 #title{
   font-size: 60px;
   text-align: center;
@@ -42,17 +128,6 @@ body{
   font-size: clamp(18px,3vw,30px);
   font-family: Montserrat,sans-serif;
   border:none;
-}
-#com{
-  position: absolute;
-  top: 20px;
-  left:50px;
-}
-
-#human{
-  position: absolute;
-  top: 20px;
-  right: 50px;
 }
 #board{
   background-color: black;
@@ -245,98 +320,4 @@ color : #4DA3FF;
   100%{
     transform: scale(0);
   }
-}
-
-@media (max-width:600px){
-
-  #title{
-    font-size: 42px;
-  }
-
-  #below{
-    font-size: 16px;
-  }
-
-  #typeground{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    height: 85px;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-
-  #com,
-  #human{
-    position: static;
-    width: 45%;
-    height: 45px;
-    font-size: 16px;
-    overflow: hidden;
-  }
-
-  #board{
-    transform: translate(-50%,100px);
-  }
-
-  .button{
-    font-size: 60px;
-  }
-
-  #scoreBox{
-    transform: translate(-50%,530px);
-    height:130px;
-  }
-
-  #X,
-  #O{
-    font-size: 45px;
-    top: -55px;
-  }
-
-  #X{
-    right: 70px;
-  }
-
-  #O{
-    left: 70px;
-  }
-
-  #Xscore,
-  #Oscore{
-    font-size: 45px;
-    top: 5px;
-  }
-
-  #Xscore{
-    right: 75px;
-  }
-
-  #Oscore{
-    left: 75px;
-  }
-
-  #reset{
-    transform: translate(-50%,660px);
-    width: 150px;
-    height: 50px;
-    font-size: 22px;
-  }
-
-  h5{
-    transform: translate(-50%,700px);
-    font-size:16px;
-    width:100%;
-    text-align:center;
-  }
-
-  h6{
-    transform: translate(-50%,730px);
-    font-size:15px;
-    width:100%;
-    text-align:center;
-    white-space: nowrap;
-  }
-
 }
