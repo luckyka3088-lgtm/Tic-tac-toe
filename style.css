@@ -16,14 +16,14 @@ body{
   -webkit-background-clip: text;
   color:transparent;
   -webkit-text-fill-color: transparent;
-  transform: translateY(-25%); 
+  transform: translateY(-27%); 
 
 }
 #below{
   color : white;
   font-family: Montserrat, sans-serif;
   text-align: center;
-  transform: translateY(-130%); 
+  transform: translateY(-180%); 
 }
 #typeground{
   background: rgba(255, 255, 255, 0.09);
@@ -34,7 +34,7 @@ body{
   border-radius: 20px;
   left:50%;
   transform: translateX(-50%);
-  margin-top:-80px;
+  margin-top:-75px;
 }
 .type{
   background: linear-gradient(90deg,#1752e8,#7bb0ed);
@@ -204,7 +204,18 @@ h6{
     top:67.5%;
 }
 #X{
-color : #4DA3FF;
+ color: #4DA3FF;
+ text-shadow: 0 0 5px #4DA3FF,
+               0 0 10px #4DA3FF,
+               0 0 15px #4DA3FF,
+               0 0 20px #4DA3FF;
+}
+#o{
+  color:#4DA3FF;
+  text-shadow: 0 0 5px #4DA3FF,
+               0 0 10px#4DA3FF,
+               0 0 15px #4DA3FF,
+               0 0 20px #4DA3FF;
 }
 #O{
   font-size:70px;
@@ -221,7 +232,7 @@ color : #4DA3FF;
 #Xscore{
   font-size:70px;
   position: absolute;
-  top:50px;
+  top:60px;
   right:100px;
   color:#4DA3FF;
   text-shadow: 0 0 5px #4DA3FF,
@@ -232,7 +243,7 @@ color : #4DA3FF;
 #Oscore{
   font-size:70px;
   position: absolute;
-  top:50px;
+  top:60px;
   left:102px;
   color:#FF5CA8;
   text-shadow: 0 0 5px #FF5CA8,
@@ -299,14 +310,12 @@ color : #4DA3FF;
   }
   #typeground{
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
   }
 
   #com,
   #human{
-    position: static;
+    position: absolute;
     width: 60%;
     max-width: 140px;
     height: 50px;
