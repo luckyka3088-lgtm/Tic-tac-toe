@@ -244,3 +244,49 @@ color : #4DA3FF;
   }
 }
 
+@media (max-width: 600px){
+
+  #title{
+    font-size: 40px;
+  }
+
+  #typeground{
+    width: 90%;
+    height: 80px;
+  }
+
+  .type{
+    width: 40%;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  #com{
+    left: 5%;
+  }
+
+  #human{
+    right: 5%;
+  }
+
+  #board{
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .button{
+    width: 30%;
+    height: 30%;
+    font-size: 70px;
+  }
+
+  #scoreBox{
+    width: 90%;
+  }
+
+  #reset{
+    width: 160px;
+    font-size: 24px;
+  }
+
+  }
