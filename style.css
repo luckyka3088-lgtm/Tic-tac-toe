@@ -69,7 +69,7 @@ body{
   left:50%;
   transform: translate(-50%,110px);
   border:3px solid rgba(255,255,255,0.4);
-  margin-top:-73px;
+  margin-top:-70px;
 }
 #scoreBox{
   background: rgba(255, 255, 255,.09);
@@ -80,7 +80,7 @@ body{
   left:50%;
   transform: translate(-50%,580px);
   border-radius: 20px;
-  margin-top:-190px;
+  margin-top:-200px;
 }
 hr{
   color:white;
@@ -101,7 +101,7 @@ hr{
   transform: translate(-50%,750px);
   border:0;
   color:white;
-  margin-top:-100px;
+  margin-top:-150px;
 }
 h5{
   color : rgba(255,255,255,0.7);
