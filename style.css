@@ -344,6 +344,19 @@ h6{
   transform: translate(-50%,580px);
   border-radius: 20px;
   }
-  
+  h5{
+  color : rgba(255,255,255,0.7);
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,790px);
+  font-size:20px;
+  }
+  h6{
+  color : rgba(255,255,255,0.7);
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,830px);
+  font-size : 20px;
+}
 }
 
