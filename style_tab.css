@@ -202,16 +202,27 @@ h6{
 color : #4DA3FF;
 }
 #O{
+color : #FF5CA8;
+}
+#O{
   font-size:70px;
   position: absolute;
   top:-90px;
   left: 100px;
+  text-shadow: 0 0 5px #FF5CA8,
+               0 0 10px #FF5CA8,
+               0 0 15px #FF5CA8,
+               0 0 20px #FF5CA8;
 }
 #X{
   font-size:70px;
   position: absolute;
   top: -90px;
   right:100px;
+  text-shadow: 0 0 5px #4DA3FF,
+               0 0 10px#4DA3FF,
+               0 0 15px #4DA3FF;
+               0 0 20px #4DA3FF;
 }
 #Xscore{
   font-size:70px;
