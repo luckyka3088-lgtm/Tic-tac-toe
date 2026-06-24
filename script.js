@@ -33,9 +33,10 @@ cells.forEach((cell) => {
     cell.classList.remove("back");
     turn = turn === "X" ? "O" : "X";
     cell.disabled = true;
-    check();
+    
     curr_O_score.innerText = Oscore;
     curr_X_score.innerText = Xscore;
+    check();
     if(com && turn == "O"){
       setTimeout(computerTurn, 300);
     }
@@ -69,6 +70,7 @@ const check = () =>{
         setTimeout(reset,500);
         return;
       }
+      winner = None;
     }
   }
   
