@@ -75,7 +75,7 @@ body{
   height:160px;
   position: absolute;
   left:50%;
-  transform: translate(-50%,610px);
+  transform: translate(-50%,580px);
   border-radius: 20px;
 }
 hr{
@@ -94,7 +94,7 @@ hr{
   font-size: clamp(20px,4vw,30px);
   position: absolute;
   left:50%;
-  transform: translate(-50%,780px);
+  transform: translate(-50%,750px);
   border:0;
   color:white;
 }
@@ -102,7 +102,7 @@ h5{
   color : rgba(255,255,255,0.7);
   position: absolute;
   left:50%;
-  transform: translate(-50%,820px);
+  transform: translate(-50%,790px);
   font-size:20px;
 }
 h6{
