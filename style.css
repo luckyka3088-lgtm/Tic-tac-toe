@@ -258,7 +258,7 @@ color : #FF5CA8;
     transform: scale(0);
   }
 }
-@media (max-width:600px){
+@media (mix-width:768px){
 
   #title{
     font-size: 42px;
