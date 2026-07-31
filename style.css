@@ -258,7 +258,7 @@ color : #FF5CA8;
     transform: scale(0);
   }
 }
-@media (mix-width:768px){
+@media (max-width:768px){
 
   #title{
     font-size: 42px;
@@ -326,7 +326,7 @@ color : #FF5CA8;
     font-size: 16px;
   }
 }
-@media only screen and (min-width:768px){
+@media only screen and (max-width:480px){
 
   #title{
     font-size: 42px;
