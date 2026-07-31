@@ -75,7 +75,7 @@ body{
   height:160px;
   position: absolute;
   left:50%;
-  transform: translate(-50%,580px);
+  transform: translate(-50%,610px);
   border-radius: 20px;
 }
 hr{
