@@ -282,7 +282,7 @@ color : #FF5CA8;
   }
 
   #scoreBox{
-    transform: translate(-50%,530px);
+    transform: translate(-50%,560px);
     height:140px;
   }
 
@@ -369,7 +369,7 @@ color : #FF5CA8;
   }
 
   #scoreBox{
-    transform: translate(-50%,530px);
+    transform: translate(-50%,560px);
     height:130px;
     width:90%;
     margin-top:-212px;
