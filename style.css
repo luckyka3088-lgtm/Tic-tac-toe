@@ -287,16 +287,16 @@ color : #FF5CA8;
   }
 
   #reset{
-    transform: translate(-50%,720px);
+    transform: translate(-50%,740px);
   }
 
   h5{
-    transform: translate(-50%,740px);
+    transform: translate(-50%,780px);
     font-size:16px;
   }
 
   h6{
-    transform: translate(-50%,765px);
+    transform: translate(-50%,790px);
     font-size:16px;
   }
 
@@ -405,7 +405,7 @@ hr{
   height:110px;
 }
   #reset{
-    transform: translate(-50%,720px);
+    transform: translate(-50%,740px);
     margin-top:-240px;
 }
   }
@@ -425,12 +425,12 @@ hr{
   }
 
   h5{
-    transform: translate(-50%,500px);
+    transform: translate(-50%,580px);
     font-size:12px;
   }
 
   h6{
-    transform: translate(-50%,510px);
+    transform: translate(-50%,590px);
     font-size:12px;
   }
 }
