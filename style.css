@@ -261,7 +261,7 @@ color : #FF5CA8;
 @media only screen and (max-width:480px){
 
   #title{
-    font-size: 18px;
+    font-size: 42px;
     transform: translateY(-27%); 
 
   }
