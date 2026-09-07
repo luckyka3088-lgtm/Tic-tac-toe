@@ -270,7 +270,7 @@ color : #FF5CA8;
     font-size: 16px;
     transform: translateY(-190%); 
 }
-  }
+  
 
   #typeground{
     height: 85px;
@@ -340,7 +340,6 @@ hr{
     transform: translate(-50%,740px);
     margin-top:-240px;
 }
-  }
 
   #typeground{
     display: flex;
