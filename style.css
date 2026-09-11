@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Special+Elite&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Special+Elite&display=swap');
 
@@ -75,7 +74,7 @@ body{
   height:160px;
   position: absolute;
   left:50%;
-  transform: translate(-50%,610px);
+  transform: translate(-50%,580px);
   border-radius: 20px;
 }
 hr{
@@ -207,7 +206,7 @@ color : #FF5CA8;
 #O{
   font-size:70px;
   position: absolute;
-  top:-90px;
+  top:-5px;
   left: 100px;
   text-shadow: 0 0 5px #FF5CA8,
                0 0 10px #FF5CA8,
@@ -217,7 +216,7 @@ color : #FF5CA8;
 #X{
   font-size:70px;
   position: absolute;
-  top: -90px;
+  top: -5px;
   right:100px;
   text-shadow: 0 0 5px #4DA3FF,
                0 0 10px#4DA3FF,
@@ -227,7 +226,7 @@ color : #FF5CA8;
 #Xscore{
   font-size:70px;
   position: absolute;
-  top:-1px;
+  top:70px;
   right:100px;
   color :#4DA3FF;
   text-shadow: 0 0 5px #4DA3FF,
@@ -238,7 +237,7 @@ color : #FF5CA8;
 #Oscore{
   font-size:70px;
   position: absolute;
-  top:-1px;
+  top:70px;
   left:102px;
   color :#FF5CA8;
   text-shadow: 0 0 5px #FF5CA8,
@@ -270,7 +269,7 @@ color : #FF5CA8;
     font-size: 16px;
     transform: translateY(-190%); 
 }
-  }
+
 
   #typeground{
     height: 85px;
@@ -340,7 +339,7 @@ hr{
     transform: translate(-50%,740px);
     margin-top:-240px;
 }
-  }
+
 
   #typeground{
     display: flex;
@@ -366,3 +365,18 @@ hr{
     font-size:12px;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  body {
+  #spin {
+    font-size: 70px;
+  }
+    #next,#copy{
+      width:18vh;
+    }
+    .l,.C{
+      width:13vh;
+      font-size:2vh;
+    }
+  }
+  }
