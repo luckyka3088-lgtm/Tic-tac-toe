@@ -1,0 +1,318 @@
+let com_btn = document.querySelector("#com");
+let human_btn = document.querySelector("#human");
+let cells = document.querySelectorAll(".button");
+let score_board = document.querySelector("#scoreBox");
+let reset_btn = document.querySelector("#reset");
+let curr_X_score = document.querySelector("#Xscore");
+let curr_O_score = document.querySelector("#Oscore");
+
+let Xscore = 0;
+let Oscore = 0;
+let turn = "X";
+let cor;
+let x, y;
+let com_turn = false;
+
+let board = [
+  [" ", " ", " "],
+  [" ", " ", " "],
+  [" ", " ", " "]
+];
+
+let win_patterns = [
+  [[0, 0], [0, 1], [0, 2]],
+  [[1, 0], [1, 1], [1, 2]],
+  [[2, 0], [2, 1], [2, 2]],
+  [[0, 0], [1, 0], [2, 0]],
+  [[0, 1], [1, 1], [2, 1]],
+  [[0, 2], [1, 2], [2, 2]],
+  [[0, 0], [1, 1], [2, 2]],
+  [[0, 2], [1, 1], [2, 0]]
+];
+
+function print_board(board) {
+  for (let i = 0; i < board.length; i++) {
+    console.log(board[i].join(" "));
+  }
+}
+
+function check_win(player, board) {
+
+  for (let i = 0; i < win_patterns.length; i++) {
+
+    let f = win_patterns[i][0];
+    let s = win_patterns[i][1];
+    let t = win_patterns[i][2];
+
+    if (
+      board[f[0]][f[1]] === player &&
+      board[s[0]][s[1]] === player &&
+      board[t[0]][t[1]] === player
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+function is_draw(board) {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (board[i][j] === " ") {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+
+
+function mini_max(board, is_maximizing, depth = 0) {
+
+  // O wins
+  if (check_win("O", board)) {
+    return 10 - depth;
+  }
+
+  // X wins
+  if (check_win("X", board)) {
+    return depth - 10;
+  }
+
+  // Draw
+  if (is_draw(board)) {
+    return 0;
+  }
+
+  if (is_maximizing) {
+
+    let best_score = -Infinity;
+
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+
+        if (board[i][j] === " ") {
+
+          board[i][j] = "O";
+
+          let score = mini_max(board, false, depth + 1);
+
+          board[i][j] = " ";
+
+          best_score = Math.max(best_score, score);
+        }
+      }
+    }
+
+    return best_score;
+
+  } else {
+
+    let best_score = Infinity;
+
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+
+        if (board[i][j] === " ") {
+
+          board[i][j] = "X";
+
+          let score = mini_max(board, true, depth + 1);
+
+          board[i][j] = " ";
+
+          best_score = Math.min(best_score, score);
+        }
+      }
+    }
+
+    return best_score;
+  }
+}
+
+
+function com_move(board) {
+
+  let best_score = -Infinity;
+  let best_move = null;
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+
+      if (board[i][j] === " ") {
+
+        // Try O's move
+        board[i][j] = "O";
+
+        let score = mini_max(board, false, 1);
+
+        // Undo the move
+        board[i][j] = " ";
+
+        if (score > best_score) {
+
+          best_score = score;
+          best_move = [i, j];
+        }
+      }
+    }
+  }
+
+  return best_move;
+}
+
+cells.forEach((cell) => {
+
+  cell.addEventListener("click", () => {
+
+    // Prevent invalid moves
+    if (cell.disabled || (turn !== "X" && com_turn)) {
+      return;
+    }
+
+    // Human move
+    cell.innerText = turn;
+    cell.classList.add(turn);
+    cell.disabled = true;
+
+    cor = cell.dataset.pos;
+    cell.classList.remove("back");
+
+    let [x, y] = cor.slice(1, -1).split(",").map(Number);
+
+    board[x][y] = turn;
+
+    // Check human win
+    if (check_win(turn, board)) {
+
+      if (turn === "X") {
+        Xscore += 1;
+      } else {
+        Oscore += 1;
+      }
+
+      curr_X_score.innerText = Xscore;
+      curr_O_score.innerText = Oscore;
+
+      cells.forEach(c => c.disabled = true);
+
+      setTimeout(reset, 800);
+      return;
+    }
+
+    // Check draw
+    if (is_draw(board)) {
+      setTimeout(reset, 800);
+      return;
+    }
+
+    turn = turn === "X" ? "O" : "X";
+
+    // Computer move
+    if (com_turn && turn === "O") {
+
+      let move = com_move(board);
+
+      if (move) {
+
+        let targetPosString = `[${move[0]},${move[1]}]`;
+
+        cells.forEach((c) => {
+
+          if (c.dataset.pos === targetPosString) {
+
+            c.innerText = turn;
+            c.classList.add(turn);
+            c.classList.remove("back");
+            c.disabled = true;
+          }
+        });
+
+        board[move[0]][move[1]] = turn;
+
+        // Check computer win
+        if (check_win(turn, board)) {
+
+          Oscore += 1;
+
+          cells.forEach(c => c.disabled = true);
+
+          curr_X_score.innerText = Xscore;
+          curr_O_score.innerText = Oscore;
+
+          setTimeout(reset, 1000);
+          return;
+        }
+
+        // Check draw
+        if (is_draw(board)) {
+          setTimeout(reset, 1000);
+          return;
+        }
+
+        // Give turn back to human
+        turn = "X";
+      }
+    }
+
+    curr_X_score.innerText = Xscore;
+    curr_O_score.innerText = Oscore;
+  });
+});
+
+function reset() {
+
+  turn = "X";
+
+  board = [
+    [" ", " ", " "],
+    [" ", " ", " "],
+    [" ", " ", " "]
+  ];
+
+  cells.forEach((cell) => {
+
+    cell.innerText = "";
+    cell.disabled = false;
+
+    cell.classList.add("back");
+    cell.classList.remove("X");
+    cell.classList.remove("O");
+  });
+}
+
+reset_btn.addEventListener("click", reset);
+
+human_btn.addEventListener("click", () => {
+
+  reset();
+
+  curr_X_score.innerText = 0;
+  curr_O_score.innerText = 0;
+
+  Xscore = 0;
+  Oscore = 0;
+
+  com_btn.style.border = "none";
+  human_btn.style.border = "2px solid white";
+
+  com_turn = false;
+});
+
+com_btn.addEventListener("click", () => {
+
+  reset();
+
+  curr_X_score.innerText = 0;
+  curr_O_score.innerText = 0;
+
+  human_btn.style.border = "none";
+  com_btn.style.border = "2px solid white";
+
+  com_turn = true;
+
+  Xscore = 0;
+  Oscore = 0;
+});
